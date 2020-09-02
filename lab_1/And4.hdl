@@ -1,0 +1,15 @@
+/**
+ * And4 gate: 
+ * out = 1 if (a == 1 and b == 1 and c==1 and d==1)
+ *       0 otherwise
+ */
+
+CHIP And4 {
+    IN a, b, c, d;
+    OUT out;
+
+    PARTS:
+    And(a=a, b=b, out=temp);
+    And(a=temp, b=c, out=temp1);
+    And(a=temp1, b=d, out=out);
+}

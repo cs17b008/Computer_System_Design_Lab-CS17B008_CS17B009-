@@ -1,0 +1,38 @@
+/**
+ * 8-way demultiplexor:
+ * {a, b, c, d, e, f, g, h} = {in, 0, 0, 0, 0, 0, 0, 0} if sel == 000
+ *                            {0, in, 0, 0, 0, 0, 0, 0} if sel == 001
+ *                            etc.
+ *                            {0, 0, 0, 0, 0, 0, 0, in} if sel == 111
+ */
+
+CHIP DMux8Way {
+    IN in, sel[3];
+    OUT a, b, c, d, e, f, g, h;
+
+    PARTS:
+
+    //optimized
+
+    /**
+    Not(in=sel[2], out=notsel2);
+    And(a=notsel2, b=in, out=temp1);
+    And(a=sel[2], b=in, out=temp2);
+    DMux4Way(in=temp1, sel=sel[0..1], a=a, b=b, c=c, d=d);
+    DMux4Way(in=temp2, sel=sel[0..1], a=e, b=f, c=g, d=h);
+    */
+
+    //not optimized
+
+    Not  (in=sel[0], out=nselA);
+    Not  (in=sel[1], out=nselB);
+    Not  (in=sel[2], out=nselC);
+    And4 (a=in, b=nselC, c=nselB, d=nselA, out=a);
+    And4 (a=in, b=nselC, c=nselB, d=sel[0], out=b);
+    And4 (a=in, b=nselC, c=sel[1], d=nselA, out=c);
+    And4 (a=in, b=nselC, c=sel[1], d=sel[0], out=d);
+    And4 (a=in, b=sel[2], c=nselB, d=nselA, out=e);
+    And4 (a=in, b=sel[2], c=nselB, d=sel[0], out=f);
+    And4 (a=in, b=sel[2], c=sel[1], d=nselA, out=g);
+    And4 (a=in, b=sel[2], c=sel[1], d=sel[0], out=h);
+}

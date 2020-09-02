@@ -1,0 +1,14 @@
+/**
+ * 16-bit bitwise And:
+ * for i = 0..15: out[i] = (a[i] and b[i] and c[i])
+ */
+
+CHIP And316 {
+    IN a[16], b[16], c[16];
+    OUT out[16];
+
+    PARTS:
+
+    And16(a=a, b=b, out=temp);
+    And16(a=temp, b=c, out=out);
+}
