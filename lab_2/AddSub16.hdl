@@ -1,0 +1,38 @@
+CHIP AddSub16{
+        IN a[16], b[16],cin;
+        OUT out[16];
+
+       PARTS:
+       Xor(a=b[0], b=cin, out=temp);
+       FullAdder(a=a[0], b=temp, c=cin, sum=out[0], carry=c0);
+       Xor(a=b[1], b=cin, out=temp);
+       FullAdder(a=a[1], b=temp, c=c0, sum=out[1], carry=c1);  
+       Xor(a=b[2], b=cin, out=temp);
+       FullAdder(a=a[2], b=temp, c=c1, sum=out[2], carry=c2);
+       Xor(a=b[3], b=cin, out=temp);
+       FullAdder(a=a[3], b=temp, c=c2, sum=out[3], carry=c3);
+       Xor(a=b[4], b=cin, out=temp);
+       FullAdder(a=a[4], b=temp, c=c3, sum=out[4], carry=c4);
+       Xor(a=b[5], b=cin, out=temp);
+       FullAdder(a=a[5], b=temp, c=c4, sum=out[5], carry=c5);  
+       Xor(a=b[6], b=cin, out=temp);
+       FullAdder(a=a[6], b=temp, c=c5, sum=out[6], carry=c6);
+       Xor(a=b[7], b=cin, out=temp);
+       FullAdder(a=a[7], b=temp, c=c6, sum=out[7], carry=c7); 
+       Xor(a=b[8], b=cin, out=temp);
+       FullAdder(a=a[8], b=temp, c=c7, sum=out[8], carry=c8);
+       Xor(a=b[9], b=cin, out=temp);
+       FullAdder(a=a[9], b=temp, c=c8, sum=out[9], carry=c9);  
+       Xor(a=b[10], b=cin, out=temp);
+       FullAdder(a=a[10], b=temp, c=c9, sum=out[10], carry=c10);
+       Xor(a=b[11], b=cin, out=temp);
+       FullAdder(a=a[11], b=temp, c=c10, sum=out[11], carry=c11);
+       Xor(a=b[12], b=cin, out=temp);
+       FullAdder(a=a[12], b=temp, c=c11, sum=out[12], carry=c12);
+       Xor(a=b[13], b=cin, out=temp);
+       FullAdder(a=a[13], b=temp, c=c12, sum=out[13], carry=c13);  
+       Xor(a=b[14], b=cin, out=temp);
+       FullAdder(a=a[14], b=temp, c=c13, sum=out[14], carry=c14);
+       Xor(a=b[15], b=cin, out=temp);
+       FullAdder(a=a[15], b=temp, c=c14, sum=out[15], carry=c15);
+} 

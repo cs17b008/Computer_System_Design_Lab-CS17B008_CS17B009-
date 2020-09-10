@@ -1,0 +1,12 @@
+CHIP FullAdder {
+    IN a, b, c;  
+    OUT sum,     
+        carry;   
+
+    PARTS:
+    Xor(a=a, b=b, out=temp);
+    Xor(a=temp, b=c, out=sum);
+    And(a=a, b=b, out=aandb);
+    And(a=c, b=temp, out=temp1);
+    Or(a=aandb, b=temp1, out=carry);
+}
