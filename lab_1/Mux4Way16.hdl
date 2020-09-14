@@ -27,4 +27,11 @@ CHIP Mux4Way16 {
     Mux4Way(a=a[13], b=b[13], c=c[13], d=d[13], sel=sel[0..1], out=out[13]);
     Mux4Way(a=a[14], b=b[14], c=c[14], d=d[14], sel=sel[0..1], out=out[14]);
     Mux4Way(a=a[15], b=b[15], c=c[15], d=d[15], sel=sel[0..1], out=out[15]);
+    
+/**
+* optimized
+* Mux16(a=a, b=b, sel=sel[0], out=aORb);
+* Mux16(a=c, b=d, sel=sel[0], out=cORd);
+* Mux16(a=aORb, b=cORd, sel=sel[1], out=out);
+*/
 }
