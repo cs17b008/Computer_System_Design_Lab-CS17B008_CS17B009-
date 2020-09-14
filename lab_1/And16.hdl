@@ -12,4 +12,10 @@ CHIP And16 {
     Not16 (in=b, out=notb);
     Or16 	(a=nota, b=notb, out=res);
     Not16 (in=res, out=out);
+    
+/** 
+  * Optimized
+  * Nand16(a=a,b=b, out=temp);
+  *  Not16(in=temp, out=out);
+  */
 }
