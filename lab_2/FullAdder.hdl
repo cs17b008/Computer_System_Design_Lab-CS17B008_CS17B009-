@@ -9,4 +9,10 @@ CHIP FullAdder {
     And(a=a, b=b, out=aandb);
     And(a=c, b=temp, out=temp1);
     Or(a=aandb, b=temp1, out=carry);
+    
+/**
+ *  HalfAdder(a=a,    b=b, sum=sum1, carry=carry1);
+ *  HalfAdder(a=sum1, b=c, sum=sum,  carry=carry2);
+ *  Or(a=carry1, b=carry2, out=carry);  // carry is leftmost bit
+ */
 }
