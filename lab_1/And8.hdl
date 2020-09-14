@@ -10,6 +10,12 @@ CHIP And8 {
     PARTS:
     Not8 (in=a, out=nota);
     Not8 (in=b, out=notb);
-    Or8 	(a=nota, b=notb, out=res);
+    Or8 (a=nota, b=notb, out=res);
     Not8 (in=res, out=out);
+    
+/**
+ *  PARTS:
+ *  Nand8(a=a, b=b, out=nand);
+ *  Not8(in=nand, out=out);
+ */
 }
