@@ -14,3 +14,9 @@ CHIP And {
     Or 	(a=nota, b=notb, out=res);
     Not (in=res, out=out);
 }
+/**
+ * opimized
+ * PARTS:
+ * Nand (a=a, b=b, out=temp);
+ * Not (in=temp, out=out);
+ */
