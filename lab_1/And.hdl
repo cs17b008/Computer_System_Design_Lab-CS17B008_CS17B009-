@@ -15,7 +15,7 @@ CHIP And {
     Not (in=res, out=out);
 }
 /**
- * opimized
+ * optimized
  * PARTS:
  * Nand (a=a, b=b, out=temp);
  * Not (in=temp, out=out);
