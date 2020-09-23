@@ -1,0 +1,38 @@
+CHIP Reg32Bit{
+	IN in[32],load;
+	OUT out[32];
+
+	PARTS:
+	Reg1Bit(in=in[0],load=load,out=out[0]);
+	Reg1Bit(in=in[1],load=load,out=out[1]);
+	Reg1Bit(in=in[2],load=load,out=out[2]);
+	Reg1Bit(in=in[3],load=load,out=out[3]);
+	Reg1Bit(in=in[4],load=load,out=out[4]);
+	Reg1Bit(in=in[5],load=load,out=out[5]);
+	Reg1Bit(in=in[6],load=load,out=out[6]);
+	Reg1Bit(in=in[7],load=load,out=out[7]);
+	Reg1Bit(in=in[8],load=load,out=out[8]);
+	Reg1Bit(in=in[9],load=load,out=out[9]);
+	Reg1Bit(in=in[10],load=load,out=out[10]);
+	Reg1Bit(in=in[11],load=load,out=out[11]);
+	Reg1Bit(in=in[12],load=load,out=out[12]);
+	Reg1Bit(in=in[13],load=load,out=out[13]);
+	Reg1Bit(in=in[14],load=load,out=out[14]);
+	Reg1Bit(in=in[15],load=load,out=out[15]);
+	Reg1Bit(in=in[16],load=load,out=out[16]);
+	Reg1Bit(in=in[17],load=load,out=out[17]);
+	Reg1Bit(in=in[18],load=load,out=out[18]);
+	Reg1Bit(in=in[19],load=load,out=out[19]);
+	Reg1Bit(in=in[20],load=load,out=out2[0]);
+	Reg1Bit(in=in[21],load=load,out=out[21]);
+	Reg1Bit(in=in[22],load=load,out=out[22]);
+	Reg1Bit(in=in[23],load=load,out=out[23]);
+	Reg1Bit(in=in[24],load=load,out=out[24]);
+	Reg1Bit(in=in[25],load=load,out=out[25]);
+	Reg1Bit(in=in[26],load=load,out=out[26]);
+	Reg1Bit(in=in[27],load=load,out=out[27]);
+	Reg1Bit(in=in[28],load=load,out=out[28]);
+	Reg1Bit(in=in[29],load=load,out=out[29]);
+	Reg1Bit(in=in[30],load=load,out=out[30]);
+	Reg1Bit(in=in[31],load=load,out=out[31]);
+}

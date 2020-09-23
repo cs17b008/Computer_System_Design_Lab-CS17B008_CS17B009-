@@ -1,0 +1,14 @@
+CHIP PC16{
+	IN in[16],load,inc[2],reset;
+    OUT out[16];
+
+    PARTS:
+    Inc16(in=rout, out=inc1);
+    Inc16(in=inc1, out=inc2);
+    Inc16(in=inc2, out=inc3);
+    Inc16(in=inc3, out=inc4);
+    Mux4Way16(a=rout, b=inc1, c=inc2, d=inc4, sel=inc[0..1], out=oinc);
+    Mux16(a=oinc, b=in, sel=load, out=oload);
+    Mux16(a=oload, b=false, sel=reset, out=oreset);
+    Reg16Bit(in=oreset, load=true, out=out, out=rout);
+}

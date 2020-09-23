@@ -1,0 +1,12 @@
+CHIP counterupdown{
+	IN in[8], load ;
+	OUT out[8];
+
+	PARTS:
+
+	Inc8(in=rout, out=inc);
+	Add8(in=rout, b=true, out=dec);
+	Mux8(a=inc, b=dec, sel=load, out=mout);
+	Reg8Bit(in=mout, load=true, out=out, out=rout);
+
+}

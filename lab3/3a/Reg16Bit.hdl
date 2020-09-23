@@ -1,0 +1,22 @@
+CHIP Reg16Bit{
+	IN in[16],load;
+	OUT out[16];
+
+	PARTS:
+	Reg1Bit(in=in[0],load=load,out=out[0]);
+	Reg1Bit(in=in[1],load=load,out=out[1]);
+	Reg1Bit(in=in[2],load=load,out=out[2]);
+	Reg1Bit(in=in[3],load=load,out=out[3]);
+	Reg1Bit(in=in[4],load=load,out=out[4]);
+	Reg1Bit(in=in[5],load=load,out=out[5]);
+	Reg1Bit(in=in[6],load=load,out=out[6]);
+	Reg1Bit(in=in[7],load=load,out=out[7]);
+	Reg1Bit(in=in[8],load=load,out=out[8]);
+	Reg1Bit(in=in[9],load=load,out=out[9]);
+	Reg1Bit(in=in[10],load=load,out=out[10]);
+	Reg1Bit(in=in[11],load=load,out=out[11]);
+	Reg1Bit(in=in[12],load=load,out=out[12]);
+	Reg1Bit(in=in[13],load=load,out=out[13]);
+	Reg1Bit(in=in[14],load=load,out=out[14]);
+	Reg1Bit(in=in[15],load=load,out=out[15]);
+}
