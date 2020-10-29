@@ -1,0 +1,14 @@
+@0
+D=M
+@1
+D=D&A
+@11
+D;JEQ
+@ODD
+M=1
+@14
+0;JMP
+@EVEN
+M=0
+@13
+0;JMP
